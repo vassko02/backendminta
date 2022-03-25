@@ -2,6 +2,15 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
+const MONGODB_URI =
+"mongodb://localhost:27017"
+mongoose
+ .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+ .then(console.log("Connected to MongoDB"))
+ .catch(err => {
+ console.log(err);
+ });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

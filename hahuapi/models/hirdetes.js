@@ -1,23 +1,3 @@
-# backendminta
-
-cmd ben: express --no-view hahuapi
-npm i --save-dev nodemon
-npm i --save mongoose
-"scripts": {
-"start": "nodemon ./bin/www"
-},
-
-var mongoose = require('mongoose');
-const MONGODB_URI =
-"mongodb://localhost:27017"
-mongoose
-    .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(console.log("Connected to MongoDB"))
-    .catch(err => {
-        console.log(err);
-    });
-
-
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 const hirdetesSchema=new Schema({
